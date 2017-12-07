@@ -18,10 +18,9 @@ if (!isset($_SERVER['HTTP_HOST'])) {
 if (!in_array(@$_SERVER['REMOTE_ADDR'], array(
     '127.0.0.1',
     '::1',
-    '172.17.0.1',
 ))) {
     header('HTTP/1.0 403 Forbidden');
-    exit('This script is only accessible from localhost. Your IP is: '.$_SERVER['REMOTE_ADDR']);
+    exit('This script is only accessible from localhost.');
 }
 
 if (file_exists($autoloader = __DIR__.'/../../../autoload.php')) {
